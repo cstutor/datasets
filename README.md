@@ -25,10 +25,6 @@ For simplicity, we will use SQLite, an embedded database. Since our focus will b
 
 First we'll want to create a database to store our data. We will name this database 'cycling' since it will store cycling data.
 
-```
-CREATE DATABASE cycling;
-```
-
 ### Tables
 
 A relational database contains one or more tables that hold records. A table has columns to define the attributes of each record. Let's create a table for our dataset. We can create a database column for each heading in our CSV file. We will also create an `id` field that will be the table's primary key. This is a unique number that corresponds to that record.
