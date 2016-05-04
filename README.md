@@ -44,7 +44,9 @@ CREATE TABLE hills (
 );
 ```
 
-### Using SQL to Create, Read, Update, and Delete Records
+## Using SQL to Query a Database
+
+When managing a database, you will always need to **C**reate, **R**ead, **U**pdate, and **D**elete Records. This set of operations, often called CRUD for short, form the basis of many popular applications.
 
 ### Creating records with the INSERT statement
 
