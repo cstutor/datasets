@@ -23,35 +23,72 @@ For simplicity, we will use SQLite. Start with a GUI. sqlitebrowser.
 
 ### Databases
 
+First we'll want to create a database to store our data. We will name this database 'cycling' since it will store cycling data.
+
+```
 CREATE DATABASE cycling;
+```
 
 ### Tables
 
-Let's create a table for this dataset.
+A relational database contains one or more tables that hold records. A table has columns to define the attributes of each record. Let's create a table for our dataset. We can create a database column for each heading in our CSV file. We will also create an `id` field that will be the table's primary key. This is a unique number that corresponds to that record.
 
+```
 CREATE TABLE hills (
-    id,
-    hill, 
-    length,
-    gain,
-    avg_grade,
-    max_grade
+    id INT PRIMARY KEY NOT NULL,
+    hill REAL NOT NULL, 
+    length REAL NOT NULL,
+    gain REAL NOT NULL,
+    avg_grade REAL NOT NULL,
+    max_grade REAL NOT NULL
 );
+```
 
 ### Using SQL to Create, Read, Update, and Delete Records
-### Adding records with the INSERT statement
 
-### 
-Let's create columns for each of our headers and a unique key.
+### Creating records with the INSERT statement
 
-Loader Python
+```
+INSERT INTO hills (hill, length, gain, avg_grade, max_grade) 
+VALUES ('Vashon Ferry hill 1', 0.7 , 354, 9.2, 18.1);
+```
 
-Put into a database
+### Reading records with the SELECT statement
 
-Run queries
+```
+SELECT id, hill, length, gain, avg_grade, max_grade 
+FROM hills;
+```
 
-Creating a User Interface
+```
+SELECT * FROM hills;
+```
 
-Visualizing Data
+### Updating records with the UPDATE statement
 
-Build a web frontend for it
+```
+UPDATE hills SET hill = 'Vashon Ferry Hill' WHERE hill = 'Vashon Ferry Hill 1';
+```
+
+### Deleting records with the DELETE statement
+
+#### Deleting a record by ID
+
+```
+DELETE FROM hills WHERE id = 1;
+```
+
+#### Deleting multiple records
+
+```
+DELETE FROM hills WHERE max_grade < 10;
+```
+
+### Using Python to execute SQL queries
+
+We will not type an INSERT statement for each record. What if the dataset had a million records? We will use Python to parse our CSV file and generate an INSERT statement for each record.
+
+## Visualizing Data 
+
+### Building a Web Frontend
+
