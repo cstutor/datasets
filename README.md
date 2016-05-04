@@ -2,9 +2,11 @@
 
 ## Setup
 
-Need Python installed first.
+First, make sure you have Python installed. If you don't, you can download the installer at http://python.org. You should also download SQLiteBrowser (http://sqlitebrowser.org), which will allow you to query SQLite databases.
 
 ## Parsing a CSV file with Python
+
+Let's get a dataset and parse it with Python. Python's ```csv``` module will allow us to read a CSV file and manipulate the data using Python data structures.
 
 ```
 import csv
@@ -15,11 +17,9 @@ with open('vashon-hills.csv') as csv_file:
         print row
 ```
 
-Get the headers, map to data
-
 ## Creating a database in SQLite
 
-For simplicity, we will use SQLite. Start with a GUI. sqlitebrowser.
+For simplicity, we will use SQLite, an embedded database. Since our focus will be on learning SQL, we don't want to deal with the complexity of setting up a database server. SQLite stores data in a single file on the filesystem. 
 
 ### Databases
 
